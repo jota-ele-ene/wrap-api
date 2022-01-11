@@ -37,7 +37,7 @@ exports.handler = async (event, context) => {
 
   let response = "";
   try {
-    const res = await fetch("https://reqres.in/api/users?page=2&888289=uuiuquwuw");
+    const res = await fetch(endpoint);
     const jsonResult = await res.json();
     response = JSON.stringify(jsonResult, null, 2);
     console.log("Successful fetch:"+ response);
@@ -46,29 +46,9 @@ exports.handler = async (event, context) => {
     console.log("Fetch error:"+error);
   }
 
-  //try {
-  //  response = await fetch(endpoint)
-  //  // handle response
-  //} catch (err) {
-  //  console.log("Fetch error:"+err);
-  //  return {
-  //    statusCode: err.statusCode || 500,
-  //    body: JSON.stringify({
-  //      error: err.message
-  //    })
-  //  }
-  //}
-
   return {
     statusCode: 200,
     body: response
   }
-
-
-
-  //return {
-  //  statusCode: 200,
-  //  body: JSON.stringify({message: message})
-  //};
 
 }
