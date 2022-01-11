@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
 
   //let response;
   //const data = JSON.parse(event);
-  //if (process.env.MY_API_URL && process.env.MY_PARAM)
+  if (myurl && myparam) console.log ("Variables OK");
   //{
   //  let myurl = process.env.MY_API_URL;
   //  let myparam = process.env.MY_PARAM;
