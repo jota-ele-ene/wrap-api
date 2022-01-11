@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 exports.handler = async (event, context) => {
 
   const MY_URL_DEFAULT = "https://reqres.in/api/users";
