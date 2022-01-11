@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
   console.log("--httpMethod: " + event.httpMethod);
   console.log("--queryStringParameters: " + event.queryStringParameters);
 
-  message = "";
+  message = DEFAULT_MESSAGE;
 
   //let response;
   //const data = JSON.parse(event);
@@ -37,7 +37,7 @@ exports.handler = async (event, context) => {
   //}
   return {
     statusCode: 200,
-    body: JSON.stringify({message: message});
+    body: JSON.stringify({message: ${message}});
   };
 
 }
