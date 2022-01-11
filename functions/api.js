@@ -31,12 +31,15 @@ exports.handler = async (event, context) => {
   endpoint = myurl + "?" + myparam;
   message = "URL set to " + endpoint;
 
+  console.log("Endpoint set to "+ endpoint);
+
   exports.handler = async (event, context) => {
     let response
     try {
       response = await fetch(API_ENDPOINT)
       // handle response
     } catch (err) {
+      console.log("Fetch error:"+err);
       return {
         statusCode: err.statusCode || 500,
         body: JSON.stringify({
@@ -44,6 +47,7 @@ exports.handler = async (event, context) => {
         })
       }
     }
+    console.log("Successful fetch:"+response);
 
     return {
       statusCode: 200,
