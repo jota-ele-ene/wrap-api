@@ -13,17 +13,17 @@ exports.handler = async (event, context) => {
   console.log("--httpMethod: " + event.httpMethod);
   console.log("--queryStringParameters: " + event.queryStringParameters);
 
-  let message = "";
+  message = "";
 
   //let response;
   //const data = JSON.parse(event);
-  if (myurl && myparam) {
-    message = "Variables OK";
-  }
-  else {
-    console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.');
-    message = DEFAULT_MESSAGE;
-  }
+  //if (myurl && myparam) {
+  //  message = "Variables OK";
+  //}
+  //else {
+  //  console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.');
+  //  message = DEFAULT_MESSAGE;
+  //}
   //{
   //  let myurl = process.env.MY_API_URL;
   //  let myparam = process.env.MY_PARAM;
