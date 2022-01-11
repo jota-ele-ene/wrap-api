@@ -5,18 +5,19 @@ exports.handler = async (event, context) => {
   let myurl = process.env.MY_API_URL;
   let myparam = process.env.MY_PARAM;
 
+  console.log(event);
+
   let response = {};
   //const data = JSON.parse(event);
   if (myurl && myparam)
   {
     console.log('process.env.MY_API_URL read: ', myurl);
     console.log('process.env.MY_PARAM read: ',myparam);
-    console.log(event);
     response = JSON.stringify({message: "Env variables process.env.MY_API_URL and process.env.MY_PARAM read"})
   }
   else {
     console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.'');
-    response = JSON.stringify({message: DEFAULT_RESPONSE})
+    response = JSON.stringify({message: DEFAULT_MESSAGE})
   }
   return {
     statusCode: 200,
