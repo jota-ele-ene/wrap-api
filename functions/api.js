@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
     message = "Variables OK";
   }
   else {
-    console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.'');
+    console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.');
     message = DEFAULT_MESSAGE;
   }
   //{
