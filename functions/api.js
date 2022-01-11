@@ -33,28 +33,26 @@ exports.handler = async (event, context) => {
 
   console.log("Endpoint set to "+ endpoint);
 
-  exports.handler = async (event, context) => {
-    let response
-    try {
-      response = await fetch(endpoint)
-      // handle response
-    } catch (err) {
-      console.log("Fetch error:"+err);
-      return {
-        statusCode: err.statusCode || 500,
-        body: JSON.stringify({
-          error: err.message
-        })
-      }
-    }
-    console.log("Successful fetch:"+response);
-
+  let response
+  try {
+    response = await fetch(endpoint)
+    // handle response
+  } catch (err) {
+    console.log("Fetch error:"+err);
     return {
-      statusCode: 200,
+      statusCode: err.statusCode || 500,
       body: JSON.stringify({
-        data: response
+        error: err.message
       })
     }
+  }
+  console.log("Successful fetch:"+response);
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      data: response
+    })
   }
 
   //return {
