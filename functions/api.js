@@ -36,24 +36,28 @@ exports.handler = async (event, context) => {
   console.log("Endpoint set to "+ endpoint);
 
   let response = "";
-  fetch(endpoint, {
-      method: event.httpMethod
-    })
-    .catch(() => {
-      console.log("Fetch error");
-      response = JSON.stringify({message: "Fetch error"});
-    })
-    .then((res) => {
-      if (res.ok) {
-        res.json().then((json) => {
-          console.log("Fetch OK: " +  JSON.stringify(json, null, 2));
-          response = JSON.stringify(json, null, 2);
-        });
-      } else {
-        console.log("Fetch error:" + JSON.stringify(res, null, 2));
-        response = JSON.stringify(res, null, 2);
-      }
-    });  console.log("Successful fetch:"+JSON.stringify(response));
+  try {
+    const res = await fetch("https://reqres.in/api/users?page=2&888289=uuiuquwuw");
+    const jsonResult = await res.json();
+    response = JSON.stringify(jsonResult, null, 2);
+    console.log("Successful fetch:"+ response);
+  } catch (error) {
+    response = JSON.stringify({error: error});
+    console.log("Fetch error:"+error);
+  }
+
+  //try {
+  //  response = await fetch(endpoint)
+  //  // handle response
+  //} catch (err) {
+  //  console.log("Fetch error:"+err);
+  //  return {
+  //    statusCode: err.statusCode || 500,
+  //    body: JSON.stringify({
+  //      error: err.message
+  //    })
+  //  }
+  //}
 
   return {
     statusCode: 200,
