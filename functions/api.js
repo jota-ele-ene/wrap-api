@@ -5,7 +5,7 @@ exports.handler = async (event, context) => {
   const MY_URL_DEFAULT = "https://reqres.in/api/users";
   const MY_PARAM_DEFAULT = "page=2";
   let myurl = process.env.MY_API_URL;
-  let myparam = process.env.MY_PARAM;
+  let myparam = decodeURIComponent(process.env.MY_PARAM.replace(/\+/g,  " "));
 
   let message = "";
   let endpoint = "";
