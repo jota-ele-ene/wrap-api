@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
   console.log("--httpMethod: " + event.httpMethod);
   console.log("--queryStringParameters: " + event.queryStringParameters);
 
-  let response = ;
+  let message = "";
 
   //let response;
   //const data = JSON.parse(event);
