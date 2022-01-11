@@ -1,21 +1,25 @@
 exports.handler = async (event, context) => {
-  console.log('process.env.MY_ENV_VAR', process.env.MY_ENV_VAR);
+
+  const DEFAULT_MESSAGE = "It seems that the environment variables are not initialised.";
+
   let myurl = process.env.MY_API_URL;
   let myparam = process.env.MY_PARAM;
-  if (myurl)
-    console.log('process.env.MY_API_URL set: ', myurl);
-  else {
-    myurl = process.env.MY_API_URL_DEFAULT;
-    console.log('process.env.MY_API_URL unset. Reading DEFAULT ', myurl);
+
+  let response = {};
+  //const data = JSON.parse(event);
+  if (myurl && myparam)
+  {
+    console.log('process.env.MY_API_URL read: ', myurl);
+    console.log('process.env.MY_PARAM read: ',myparam);
+    console.log(event);
+    response = JSON.stringify({message: "Env variables process.env.MY_API_URL and process.env.MY_PARAM read"})
   }
-  if (myparam)
-    console.log('process.env.MY_PARAM set: ', myparam);
   else {
-    myurl = process.env.MY_PARAM_DEFAULT;
-    console.log('process.env.MY_PARAM unset. Reading DEFAULT ', myparam);
+    console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.'');
+    response = JSON.stringify({message: DEFAULT_RESPONSE})
   }
   return {
     statusCode: 200,
-    body: JSON.stringify({message: event.queryStringParameters})
+    body: response
   };
 }
