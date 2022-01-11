@@ -9,6 +9,7 @@ exports.handler = async (event, context) => {
 
 
   let message = "";
+  let endpoint = "";
 
   console.log("Navigating to: " + event.rawUrl);
   console.log("--Path: " + event.path);
@@ -27,11 +28,34 @@ exports.handler = async (event, context) => {
   if (Boolean(event.rawQuery)) {
     myparam += `&${event.rawQuery}`;
   }
-  message = "URL set to " + myurl + "?" + myparam;
+  endpoint = myurl + "?" + myparam;
+  message = "URL set to " + endpoint;
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({message: message})
-  };
+  exports.handler = async (event, context) => {
+    let response
+    try {
+      response = await fetch(API_ENDPOINT)
+      // handle response
+    } catch (err) {
+      return {
+        statusCode: err.statusCode || 500,
+        body: JSON.stringify({
+          error: err.message
+        })
+      }
+    }
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        data: response
+      })
+    }
+  }
+
+  //return {
+  //  statusCode: 200,
+  //  body: JSON.stringify({message: message})
+  //};
 
 }
