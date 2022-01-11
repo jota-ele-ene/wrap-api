@@ -1,11 +1,20 @@
 exports.handler = async (event, context) => {
 
+  const myurl = `${process.env.MY_API_URL}?`;
+  const myparam = process.env.MY_PARAM;
+  console.log("Variables: "+myurl+","+myparam);
+
+
   const DEFAULT_MESSAGE = "It seems that the environment variables are not initialised.";
 
-  console.log(event);
+  console.log("Navigating to: " + event.rawUrl);
+  console.log("--Path: " + event.path);
+  console.log("--Query: " + event.rawQuery);
+  console.log("--httpMethod: " + event.httpMethod);
+  console.log("--queryStringParameters: " + event.queryStringParameters);
 
   let response = JSON.stringify({message: DEFAULT_MESSAGE});
-  
+
   //let response;
   //const data = JSON.parse(event);
   //if (process.env.MY_API_URL && process.env.MY_PARAM)
