@@ -36,7 +36,7 @@ exports.handler = async (event, context) => {
   exports.handler = async (event, context) => {
     let response
     try {
-      response = await fetch(API_ENDPOINT)
+      response = await fetch(endpoint)
       // handle response
     } catch (err) {
       console.log("Fetch error:"+err);
