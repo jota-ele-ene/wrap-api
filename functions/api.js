@@ -13,17 +13,14 @@ exports.handler = async (event, context) => {
   console.log("--httpMethod: " + event.httpMethod);
   console.log("--queryStringParameters: " + event.queryStringParameters);
 
-  message = DEFAULT_MESSAGE;
+  let response = JSON.stringify({message: DEFAULT_MESSAGE});
 
   //let response;
   //const data = JSON.parse(event);
-  //if (myurl && myparam) {
-  //  message = "Variables OK";
-  //}
-  //else {
-  //  console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.');
-  //  message = DEFAULT_MESSAGE;
-  //}
+  if (myurl && myparam) console.log ("Variables OK");
+  else {
+    console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.'');
+  }
   //{
   //  let myurl = process.env.MY_API_URL;
   //  let myparam = process.env.MY_PARAM;
@@ -37,7 +34,7 @@ exports.handler = async (event, context) => {
   //}
   return {
     statusCode: 200,
-    body: JSON.stringify({message: DEFAULT_MESSAGE});
+    body: response
   };
 
 }
