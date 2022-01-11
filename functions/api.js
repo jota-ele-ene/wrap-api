@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
     myparam = MY_PARAM_DEFAULT;
   }
   if (Boolean(event.rawQuery)) {
-    myparam += event.rawQuery;
+    myparam += `&${event.rawQuery}`;
   }
   message = "URL set to " + myurl + "?" + myparam;
 
