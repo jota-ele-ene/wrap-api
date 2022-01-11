@@ -35,24 +35,29 @@ exports.handler = async (event, context) => {
 
   console.log("Endpoint set to "+ endpoint);
 
-  let response
-  try {
-    response = await fetch(endpoint)
-    // handle response
-  } catch (err) {
-    console.log("Fetch error:"+err);
-    return {
-      statusCode: err.statusCode || 500,
-      body: JSON.stringify({
-        error: err.message
-      })
-    }
-  }
-  console.log("Successful fetch:"+JSON.stringify(response));
+  let response = "";
+  fetch(endpoint, {
+      method: event.httpMethod
+    })
+    .catch(() => {
+      console.log("Fetch error");
+      response = JSON.stringify({message: "Fetch error"});
+    })
+    .then((res) => {
+      if (res.ok) {
+        res.json().then((json) => {
+          console.log("Fetch OK: " +  JSON.stringify(json, null, 2));
+          response = JSON.stringify(json, null, 2);
+        });
+      } else {
+        console.log("Fetch error:" + JSON.stringify(res, null, 2));
+        response = JSON.stringify(res, null, 2);
+      }
+    });  console.log("Successful fetch:"+JSON.stringify(response));
 
   return {
     statusCode: 200,
-    body: JSON.stringify(response)
+    body: response
   }
 
 
