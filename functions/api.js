@@ -48,7 +48,7 @@ exports.handler = async (event, context) => {
       })
     }
   }
-  console.log("Successful fetch:"+response);
+  console.log("Successful fetch:"+JSON.stringify(response));
 
   return {
     statusCode: 200,
