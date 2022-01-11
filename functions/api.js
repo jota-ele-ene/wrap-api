@@ -1,11 +1,12 @@
 exports.handler = async (event, context) => {
 
-  const myurl = `${process.env.MY_API_URL}?`;
-  const myparam = process.env.MY_PARAM;
+  const MY_URL_DEFAULT = "https://reqres.in/api/users";
+  const MY_PARAM_DEFAULT = "page=2";
+  let myurl = `${process.env.MY_API_URL}?`;
+  let myparam = process.env.MY_PARAM;
   console.log("Variables: "+myurl+","+myparam);
 
 
-  const DEFAULT_MESSAGE = "It seems that the environment variables are not initialised.";
   let message = "";
 
   console.log("Navigating to: " + event.rawUrl);
@@ -16,23 +17,15 @@ exports.handler = async (event, context) => {
 
   //let response;
   //const data = JSON.parse(event);
-  if (myurl && myparam) {
-    message = "Env. variables set";
+  if (Boolean(myurl)==false) {
+    myurl = MY_URL_DEFAULT;
   }
-  else {
-    message = "Either process.env.MY_API_URL or process.env.MY_PARAM are unset.";
+  if (Boolean(myparam)==false) {
+    myparam = MY_PARAM_DEFAULT;
   }
-  //{
-  //  let myurl = process.env.MY_API_URL;
-  //  let myparam = process.env.MY_PARAM;
-  //  console.log('process.env.MY_API_URL read: ', myurl);
-  //  console.log('process.env.MY_PARAM read: ',myparam);
-  //  response = JSON.stringify({message: "Env variables process.env.MY_API_URL and process.env.MY_PARAM read"})
-  //}
-  //else {
-  //  console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.'');
-  //  response = JSON.stringify({message: DEFAULT_MESSAGE})
-  //}
+
+  message = "URL set to " + myurl + "?" + myparam;
+
   return {
     statusCode: 200,
     body: JSON.stringify({message: message})
