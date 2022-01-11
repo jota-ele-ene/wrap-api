@@ -37,7 +37,7 @@ exports.handler = async (event, context) => {
   //}
   return {
     statusCode: 200,
-    body: JSON.stringify({message: ${message}});
+    body: JSON.stringify({message: DEFAULT_MESSAGE});
   };
 
 }
