@@ -4,11 +4,8 @@ exports.handler = async (event, context) => {
 
   const MY_URL_DEFAULT = "https://reqres.in/api/users";
   const MY_PARAM_DEFAULT = "page=2";
-  //let myurl = `${process.env.MY_API_URL}?`;
   let myurl = process.env.MY_API_URL;
   let myparam = process.env.MY_PARAM;
-  console.log("Variables: "+myurl+","+myparam);
-
 
   let message = "";
   let endpoint = "";
@@ -19,8 +16,6 @@ exports.handler = async (event, context) => {
   console.log("--httpMethod: " + event.httpMethod);
   console.log("--queryStringParameters: " + event.queryStringParameters);
 
-  //let response;
-  //const data = JSON.parse(event);
   if (Boolean(myurl)==false) {
     myurl = MY_URL_DEFAULT;
   }
