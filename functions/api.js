@@ -6,6 +6,7 @@ exports.handler = async (event, context) => {
 
 
   const DEFAULT_MESSAGE = "It seems that the environment variables are not initialised.";
+  let message = "";
 
   console.log("Navigating to: " + event.rawUrl);
   console.log("--Path: " + event.path);
@@ -13,13 +14,15 @@ exports.handler = async (event, context) => {
   console.log("--httpMethod: " + event.httpMethod);
   console.log("--queryStringParameters: " + event.queryStringParameters);
 
-  let response = JSON.stringify({message: DEFAULT_MESSAGE});
+  let response = ;
 
   //let response;
   //const data = JSON.parse(event);
-  if (myurl && myparam) console.log ("Variables OK");
+  if (myurl && myparam) {
+    message = "Env. variables set";
+  }
   else {
-    console.log('Either process.env.MY_API_URL or process.env.MY_PARAM are unset.');
+    message = "Either process.env.MY_API_URL or process.env.MY_PARAM are unset.";
   }
   //{
   //  let myurl = process.env.MY_API_URL;
@@ -34,7 +37,7 @@ exports.handler = async (event, context) => {
   //}
   return {
     statusCode: 200,
-    body: response
+    body: JSON.stringify({message: message})
   };
 
 }
