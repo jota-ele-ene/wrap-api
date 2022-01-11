@@ -2,5 +2,5 @@
   publish = "site"
   functions = "functions"
 
-  MY_API_URL_DEFAULT = "page=2"
+  MY_API_PARAM_DEFAULT = "page=2"
   MY_API_URL_DEFAULT = "https://reqres.in/api/users"
