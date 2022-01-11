@@ -2,7 +2,7 @@ exports.handler = async (event, context) => {
 
   const DEFAULT_MESSAGE = "It seems that the environment variables are not initialised.";
 
-  console.log(event);
+  //console.log(event);
 
   let response;
   //const data = JSON.parse(event);
@@ -22,4 +22,5 @@ exports.handler = async (event, context) => {
     statusCode: 200,
     body: response
   };
+
 }
