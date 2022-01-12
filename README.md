@@ -1,4 +1,4 @@
-# Using Netlify serverless functions for wrapping 3rd. party APIs [![Netlify Status](https://api.netlify.com/api/v1/badges/aecac50a-bebe-4399-969e-43b66dcad90b/deploy-status)](https://app.netlify.com/sites/wrap-api/deploys)
+# Using Netlify serverless functions for wrapping 3rd. party APIs [![Netlify Status](https://api.netlify.com/api/v1/badges/dc6c222a-f62c-49ea-9d9c-7632af294ada/deploy-status)](https://app.netlify.com/sites/fetch-remote/deploys)
 
 [![GitHub license](https://img.shields.io/github/license/jota-ele-ene/wrap-api)](https://github.com/jota-ele-ene/wrap-api/blob/main/LICENSE)
 [![GitHub release (latest by date)](https://img.shields.io/badge/release-v1.0--alpha.1-lightgrey)](https://github.com/jota-ele-ene/wrap-api/releases)
