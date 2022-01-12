@@ -6,7 +6,6 @@ exports.handler = async (event, context) => {
   const MY_PARAM_DEFAULT = "page=2";
   let myurl = process.env.MY_API_URL;
   let myparam = process.env.MY_PARAM;
-  myparam = decodeURIComponent(myparam.replace(/\+/g,  " "));
 
   let message = "";
   let endpoint = "";
@@ -23,6 +22,8 @@ exports.handler = async (event, context) => {
   if (Boolean(myparam)==false) {
     myparam = MY_PARAM_DEFAULT;
   }
+  else myparam = decodeURIComponent(myparam.replace(/\+/g,  " "));
+
   if (Boolean(event.rawQuery)) {
     myparam += `&${event.rawQuery}`;
   }
