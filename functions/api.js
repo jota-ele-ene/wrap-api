@@ -34,8 +34,8 @@ exports.handler = async (event, context) => {
   let response = "";
   try {
     const res = await fetch(endpoint);
-    console.log("res.headers"+res.headers);
     const jsonResult = await res.json();
+    console.log("res.headers"+res.headers);
     console.log("jsonResult"+jsonResult);
     response = JSON.stringify(jsonResult, null, 2);
     console.log("Successful fetch:"+ response);
