@@ -1,7 +1,7 @@
 # Using Netlify serverless functions for wrapping 3rd. party APIs [![Netlify Status](https://api.netlify.com/api/v1/badges/aecac50a-bebe-4399-969e-43b66dcad90b/deploy-status)](https://app.netlify.com/sites/wrap-api/deploys)
 
 [![GitHub license](https://img.shields.io/github/license/jota-ele-ene/wrap-api)](https://github.com/jota-ele-ene/wrap-api/blob/main/LICENSE)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/jota-ele-ene/wrap-api)](https://github.com/jota-ele-ene/wrap-api/releases)
+[![GitHub release (latest by date)](https://img.shields.io/badge/release-v1.0--alpha.1-lightgrey)](https://github.com/jota-ele-ene/wrap-api/releases)
 [![GitHub issues](https://img.shields.io/github/issues/jota-ele-ene/wrap-api)](https://github.com/jota-ele-ene/wrap-api/issues)
 
 This repo implements [Netlify serverless functions](https://docs.netlify.com/functions/overview/) to wrap third party APIs. After deploying, you can invoke an endpoint. The app builds and invokes a new URL concatenating two strings retrieved from environment variables and the original query string params. You can deploy yourself to manage sensitive information such as secret API keys without exposing them in your public repos or client side code. It is set up to be instantly deployed to [Netlify](https://url.netlify.com/SyTBPVamO)!
@@ -9,12 +9,15 @@ This repo implements [Netlify serverless functions](https://docs.netlify.com/fun
 ## Table of Contents
 
 - [Demo site](#demo-site)
-- [Using this repo](#using-this-repo)
 - [How it works](#how-it-works)
+- [Using this repo](#using-this-repo)
+- [Roadmap](#roadmap)
+- [Suggestions, bugs and whatever](#suggestions-bugs-and-whatever)
+- [License](#license)
 - [Additional Learning materials](#additional-learning-materials)
-  * [Netlify](#netlify)
+- [Author](#author)
 
-## [Demo Site](https://wrap-api.netlify.app/api)
+## Demo Site
 
   To see this function in action, here is deployed a live [demo site](https://wrap-api.netlify.app/api) that retrieves a JSON demo obj from [REG|RES service](https://reqres.in) for testing purpose.
 
@@ -103,7 +106,7 @@ If you prefer do it manually, follow these few steps:
 
 Visit the [To-do column](https://github.com/users/jota-ele-ene/projects/1) in the basic kanban-style board open to manage this repo roadmap.
 
-## Questions, ideas, bugs, pull requests
+## Suggestions, bugs and whatever
 
 All feedback is welcome! Head over to the [issue tracker](https://github.com/jota-ele-ene/wrap-api/issues).
 
@@ -111,9 +114,10 @@ All feedback is welcome! Head over to the [issue tracker](https://github.com/jot
 
 This repo is licensed under the **MIT** license. Check the [LICENSE file](https://github.com/jota-ele-ene/wrap-api/blob/main/LICENSE) for details.
 
-Thanks to the authors of following resources used as inspiration for this code:
+Thanks to the authors of following resources, among others, used for developing this code:
 
 - [Netlify Functions Serverless Workshop](https://github.com/DavidWells/netlify-functions-workshop)
+- [REG|RES service](https://reqres.in)
 
 ## Additional Learning materials
 
