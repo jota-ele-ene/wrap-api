@@ -35,6 +35,7 @@ exports.handler = async (event, context) => {
   try {
     const res = await fetch(endpoint);
     const jsonResult = await res.json();
+    console.log(res);
     response = JSON.stringify(jsonResult, null, 2);
     console.log("Successful fetch:"+ response);
   } catch (error) {
@@ -44,6 +45,12 @@ exports.handler = async (event, context) => {
 
   return {
     statusCode: 200,
+    headers: {
+    /* Required for CORS support to work */
+    'Access-Control-Allow-Origin': '*',
+    /* Required for cookies, authorization headers with HTTPS */
+    'Access-Control-Allow-Credentials': true
+    },
     body: response
   }
 
