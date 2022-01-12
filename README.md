@@ -19,7 +19,7 @@ This repo implements [Netlify serverless functions](https://docs.netlify.com/fun
 
 ## Demo Site
 
-  To see this function in action, here is deployed a live [demo site](fetch-remote.netlify.app/api) that retrieves a JSON demo obj from [REG|RES service](https://reqres.in) for testing purpose.
+  To see this function in action, here is deployed a live [demo site](https://fetch-remote.netlify.app/.netlify/functions/api) that retrieves a JSON demo obj from [REG|RES service](https://reqres.in) for testing purpose.
 
   Deploy and configure your own site in the simplest and quickest way possible by clicking this button:
 
