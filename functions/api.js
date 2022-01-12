@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
   const MY_PARAM_DEFAULT = "page=2";
   let myurl = process.env.MY_API_URL;
   let myparam = process.env.MY_PARAM;
-  let myparam = decodeURIComponent(myparam.replace(/\+/g,  " "));
+  myparam = decodeURIComponent(myparam.replace(/\+/g,  " "));
 
   let message = "";
   let endpoint = "";
