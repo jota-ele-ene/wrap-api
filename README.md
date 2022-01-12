@@ -12,7 +12,7 @@ This repo implements [Netlify serverless functions](https://docs.netlify.com/fun
 - [How it works](#how-it-works)
 - [Using this repo](#using-this-repo)
 - [Roadmap](#roadmap)
-- [Questions, ideas, bugs and whatever](#questions-ideas-bugs-and-whatever]
+- [Suggestions, bugs and whatever](#suggestions-bugs-and-whatever)
 - [License](#license)
 - [Additional Learning materials](#additional-learning-materials)
 - [Author](#author)
@@ -106,7 +106,7 @@ If you prefer do it manually, follow these few steps:
 
 Visit the [To-do column](https://github.com/users/jota-ele-ene/projects/1) in the basic kanban-style board open to manage this repo roadmap.
 
-## Questions, ideas, bugs, pull requests
+## Suggestions, bugs and whatever
 
 All feedback is welcome! Head over to the [issue tracker](https://github.com/jota-ele-ene/wrap-api/issues).
 
